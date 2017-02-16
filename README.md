@@ -7,8 +7,7 @@ I've included some samples that can be used in conjunction, or ignored, as desir
 ### Usage
 
 ```
-./convert.rb resume.yml > resume.json
-docker-compose run hackmyresume ...
+THEME=modern RESUME=in/resume.json make resume
 ```
 
 ### docker-compose.yml
