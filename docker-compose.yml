@@ -1,0 +1,7 @@
+version: '2'
+services:
+  hackmyresume:
+    image: 'bentheax/hackmyresume'
+    volumes:
+      - './in:/app/in'
+      - './out:/app/out'
