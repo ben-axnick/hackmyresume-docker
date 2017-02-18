@@ -1,5 +1,5 @@
 PROJECT = bentheax/hackmyresume
-VERSION = 0.1
+VERSION = 0.2
 IMAGE = $(PROJECT):$(VERSION)
 LATEST = $(PROJECT):latest
 
