@@ -4,7 +4,7 @@ IMAGE = $(PROJECT):$(VERSION)
 LATEST = $(PROJECT):latest
 
 THEME ?= modern
-FILES ?= in/resume-base.json
+FILES ?= in/resume.json
 
 .PHONY: build
 build:

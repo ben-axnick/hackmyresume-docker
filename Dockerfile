@@ -27,8 +27,9 @@ killall Xvfb\
 ' > /usr/bin/wkhtmltopdf && \
     chmod +x /usr/bin/wkhtmltopdf
 
-RUN npm install -g hackmyresume
+ADD package.json .
+RUN npm install
 
 VOLUME in
 VOLUME out
-ENTRYPOINT ["hackmyresume"]
+ENTRYPOINT ["./node_modules/.bin/hackmyresume"]
