@@ -17,12 +17,19 @@ push:
 	docker push $(LATEST)
 
 .PHONY: resume
-resume: $(FILES) clean
+resume: json-files clean
 	docker-compose run hackmyresume BUILD $(FILES) TO out/resume.all -d -t $(THEME)
 
+.PHONY: convert
+convert: json-files
+	docker-compose run hackmyresume CONVERT $(FILES) $(FILES)
+
 .PHONY: validate
-validate: in/resume-base.json
+validate: json
 	docker-compose run hackmyresume VALIDATE $(FILES)
+
+.PHONY: json-files
+json-files: $(FILES)
 
 in/%.json: in/%.yml
 	ruby convert.rb $< > $@

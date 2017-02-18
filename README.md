@@ -1,19 +1,36 @@
-## HackMyResume Docker
+# HackMyResume Docker
 
 This is a docker container of the [HackMyResume](https://github.com/hacksalot/HackMyResume) project.
 
-I've included some samples that can be used in conjunction, or ignored, as desired.
+## Usage
 
-### Usage
+An expected flow would be:
 
 ```
+# Create in/resume.yml or in/resume.json file.
+FILES=in/resume.json make validate
+
+# Repeat until validation is successful
 THEME=modern RESUME=in/resume.json make resume
 ```
 
-### docker-compose.yml
+At the end of this process, your files will be in the `out` directory.
 
-Run the container with local directories mounted
+## Additional Themes
 
-### convert.rb
+If you want to use a theme that wasn't built in, you have two options:
 
-Write resume as a human friendly .yml file, then transform to .json
+1. clone it to your `in` directory
+2. add it two your `package.json`
+
+Note that JSON Resume themes require an additional `hackmyresume CONVERT` step.
+
+## Complex workflows
+
+If you want to use an options file or more advanced HackMyResume features, just
+use the binary directly. You only constraints are that `in` and `out` are the
+only folders you can access from the host system.
+
+```
+docker-compose run hackmyresume
+```
