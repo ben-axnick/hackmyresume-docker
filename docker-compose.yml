@@ -5,3 +5,4 @@ services:
     volumes:
       - './in:/app/in'
       - './out:/app/out'
+      - './package.json:/app/package.json'

@@ -32,4 +32,7 @@ RUN npm install
 
 VOLUME in
 VOLUME out
-ENTRYPOINT ["./node_modules/.bin/hackmyresume"]
+VOLUME node_modules
+
+ADD run.sh .
+ENTRYPOINT ["./run.sh"]

@@ -1,7 +1,7 @@
 {
   "name": "hackmyresume-docker",
   "description": "Docker container for HackMyResume",
-  "version": "0.0.1",
+  "version": "0.3.0",
   "dependencies": {
     "hackmyresume": "^1.8.0"
   }
